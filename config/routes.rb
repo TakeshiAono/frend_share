@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :posts do
+  resources :images do
     collection do 
       post 'confirm'
     end
@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   resources :sessions ,only: [:index, :new] do
     collection do
-      post 'login'
+      get 'login'
     end
   end
 end

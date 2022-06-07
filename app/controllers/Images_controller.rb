@@ -1,6 +1,6 @@
-class PostsController < ApplicationController
+class ImagesController < ApplicationController
   def index
-    @picture = Picture.all
+    # @picture = Picture.all
   end
 
   def new
