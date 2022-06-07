@@ -11,6 +11,7 @@ class ImagesController < ApplicationController
   
   def edit
   end
+  
   def show
   end
 

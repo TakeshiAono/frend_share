@@ -4,10 +4,6 @@ Rails.application.routes.draw do
       post 'confirm'
     end
   end
-
-  resources :sessions ,only: [:index, :new] do
-    collection do
-      get 'login'
-    end
-  end
+  resources :sessions ,only: [:create, :new]
+  resources :users ,only: [:create, :new]
 end
