@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   def index
+    @picture = Picture.all
   end
 
   def new
