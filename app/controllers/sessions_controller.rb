@@ -1,10 +1,17 @@
 class SessionsController < ApplicationController
-  def create
 
+  def new
+    
   end
   
-  def new
-
+  def create
+    byebug
+    User.create(post_params)
+    redirect_to images_path
   end
 
+  private
+  def post_params
+    params.require(:session).permit(:name, :email, :password_digest)
+  end  
 end
