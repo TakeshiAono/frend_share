@@ -1,0 +1,12 @@
+<%= form_with(scope: :users, url: users_path, local:true) do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+
+  <%= form.label :email %>
+  <%= form.text_field :email %>
+
+  <%= form.label :password_digest %>
+  <%= form.text_field :password_digest %>
+
+  <%= form.submit %>
+<% end %>

@@ -5,9 +5,10 @@ class SessionsController < ApplicationController
   end
   
   def create
-    byebug
-    User.create(post_params)
+    user = User.find_by(email: params[:session][:email])
+    session[:user_id] = user[:id]
     redirect_to images_path
+    byebug
   end
 
   private
