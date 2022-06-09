@@ -1,14 +1,16 @@
 class SessionsController < ApplicationController
+  skip_before_action :login_required, only: [:new, :create]
 
   def new
-    
+    # session.delete(:user_id)
+    # session.delete(:user_id)
   end
   
   def create
     user = User.find_by(email: params[:session][:email])
-    session[:user_id] = user[:id]
+    session[:user_id] = user.id
+    current_user
     redirect_to images_path
-    byebug
   end
 
   private

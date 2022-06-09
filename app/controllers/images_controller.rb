@@ -1,6 +1,8 @@
 class ImagesController < ApplicationController
+  # skip_before_action :login_required, only: [:index, :create]
   def index
-    @image =Image.all
+    @images = Image.all
+    @images2 ={name:"aono"}
   end
 
   def new
