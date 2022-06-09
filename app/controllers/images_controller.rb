@@ -2,10 +2,10 @@ class ImagesController < ApplicationController
   # skip_before_action :login_required, only: [:index, :create]
   def index
     @images = Image.all
-    @images2 ={name:"aono"}
   end
 
   def new
+    @images = Image.new
   end
   
   def create
@@ -26,5 +26,6 @@ class ImagesController < ApplicationController
 
 
   def destroy
+ 
   end
 end

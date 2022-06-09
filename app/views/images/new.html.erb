@@ -1,1 +1,5 @@
-<%# <%= form_with()%> %>
+<%= form_with(model: @images, local: true, url: images_path) do |form| %>
+  <%= form.label :coment %>
+  <%= form.text_field :coment %>
+
+<% end %>
