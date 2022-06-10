@@ -1,7 +1,7 @@
 <%= link_to "ログアウト", new_session_path%>
 <h1><%= @current_user.name %>のマイページです</h1>
 
-<%= link_to "投稿する", new_image_path  %>
+<%= link_to "投稿する", new_feed_path  %>
 
 
   <table>
@@ -19,12 +19,10 @@
       <td><%= image[:image]%></td>
       <td><%= image[:created_at]%></td>
       <td><%= image[:updated_at]%></td>
-      <td><%= link_to "編集", edit_image_path(image.id)%></td>
-      <td><%= link_to "詳細表示", image_path(image.id)%></td>
-      <td><%= link_to "削除", image_path(image.id), method: :delete %></td>
+      <td><%= link_to "編集", edit_feed_path(image.id)%></td>
+      <td><%= link_to "詳細表示", feed_path(image.id)%></td>
+      <td><%= link_to "削除", feed_path(image.id), method: :delete %></td>
     </tr>
   <% end %>
   </table>
 <%# <% end %> %>
-
-

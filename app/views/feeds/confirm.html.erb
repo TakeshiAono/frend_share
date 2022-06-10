@@ -1,0 +1,15 @@
+<% byebug %>
+<%= form_with(model: @feed, local: true, url: feeds_path) do |form| %>
+  <%= form.hidden_field :coment %>
+  <%= form.hidden_field :image  %>
+
+
+  <strong><h2>coment:</h2></strong>
+  <%= @feed.coment%>
+  <strong><h2>Image:</h2></strong>
+  <%= image_tag @feed.image.url %>
+  <% byebug %>
+  <%= form.submit %>
+<% end %>
+
+<%= link_to '戻る', images_path  %>
