@@ -6,6 +6,7 @@ class ImagesController < ApplicationController
 
   def new
     @images = Feed.new
+    render new_feed_path
   end
   
   def create
