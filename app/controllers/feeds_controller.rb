@@ -19,6 +19,7 @@ class FeedsController < ApplicationController
   
   # GET /feeds/1/edit
   def edit
+
   end
   
   # POST /feeds or /feeds.json
@@ -48,6 +49,7 @@ class FeedsController < ApplicationController
 
   # PATCH/PUT /feeds/1 or /feeds/1.json
   def update
+    byebug
     respond_to do |format|
       if @feed.update(feed_params)
         format.html { redirect_to feed_url(@feed), notice: "Feed was successfully updated." }
