@@ -4,29 +4,29 @@ class ImagesController < ApplicationController
     @feeds = Feed.all
   end
 
-  def new
-    @images = Feed.new
-    render new_feed_path
-  end
+  # def new
+  #   @images = Feed.new
+  #   render new_feed_path
+  # end
   
-  def create
-  end
+  # def create
+  # end
   
-  def edit
-  end
+  # def edit
+  # end
   
-  def show
-  end
+  # def show
+  # end
 
-  def update
+  # def update
 
-  end
+  # end
 
-  def confirm
-  end
+  # def confirm
+  # end
 
 
-  def destroy
+  # def destroy
  
-  end
+  # end
 end
