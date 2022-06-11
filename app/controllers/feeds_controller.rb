@@ -24,6 +24,7 @@ class FeedsController < ApplicationController
   # POST /feeds or /feeds.json
   def create
     @feed = Feed.new(feed_params)
+    @feed.save
     redirect_to images_path
     
     
