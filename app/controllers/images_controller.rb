@@ -1,7 +1,7 @@
 class ImagesController < ApplicationController
   # skip_before_action :login_required, only: [:index, :create]
   def index
-    @images = Feed.all
+    @feeds = Feed.all
   end
 
   def new
