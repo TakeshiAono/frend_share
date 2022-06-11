@@ -1,4 +1,4 @@
 class User < ApplicationRecord
-  # has_many :images
+  has_many :feeds
   # has_secure_password
 end

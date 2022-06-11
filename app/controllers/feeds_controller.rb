@@ -12,19 +12,21 @@ class FeedsController < ApplicationController
 
   # GET /feeds/new
   def new
-    byebug
+    
     @feed = Feed.new
     # @feed = Feed.new(feed_params)
   end
   
   # GET /feeds/1/edit
   def edit
-
   end
   
   # POST /feeds or /feeds.json
   def create
-    @feed = Feed.new(feed_params)
+    # @feed = Feed.new(feed_params)
+    # @feed.user_id = @current_user.id
+    byebug
+    @feed = current_user.feeds.build(feed_params)
     @feed.save
     redirect_to images_path
     
@@ -42,14 +44,11 @@ class FeedsController < ApplicationController
   end
 
   def confirm
-    byebug
     @feed = Feed.new(feed_params)
-    byebug
   end
 
   # PATCH/PUT /feeds/1 or /feeds/1.json
   def update
-    byebug
     respond_to do |format|
       if @feed.update(feed_params)
         format.html { redirect_to feed_url(@feed), notice: "Feed was successfully updated." }
@@ -79,7 +78,7 @@ class FeedsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def feed_params
-      byebug
+      
       params.require(:feed).permit(:image, :image_cache, :coment)
     end
 end
