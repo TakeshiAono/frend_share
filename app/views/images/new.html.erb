@@ -1,3 +1,17 @@
+  <% if picture.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(picture.errors.count, "error") %> prohibited this picture from being saved:</h2>
+
+      <ul>
+        <% picture.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+
+
+
+
 <%= form_with(model: @images, local: true, url: images_path) do |form| %>
   <%= form.label :coment %>
   <%= form.text_field :coment %>
