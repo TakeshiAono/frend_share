@@ -1,4 +1,4 @@
-class FeedsController < ApplicationController
+class PicturesController < ApplicationController
   before_action :set_feed, only: %i[ show edit update destroy ]
 
   # GET /feeds or /feeds.json
