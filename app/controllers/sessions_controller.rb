@@ -5,12 +5,17 @@ class SessionsController < ApplicationController
     session.delete(:user_id)
   end
   
-  def create
-    
+  def create    
     user = User.find_by(email: params[:session][:email].downcase)
-    session[:user_id] = user.id
+byebug
+    if user && user.authenticate(params[:session][:password])
+      session[:user_id] = user.id
+      redirect_to images_path
+    else
+      flash.now[:danger] = 'ログインに失敗しました'
+      render :new
+    end
     # current_user
-    redirect_to images_path
   end
 
   private
