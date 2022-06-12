@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
   end
   
   def create
-    byebug
+    
     user = User.find_by(email: params[:session][:email].downcase)
     session[:user_id] = user.id
     # current_user

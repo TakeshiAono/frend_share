@@ -25,7 +25,7 @@ class PicturesController < ApplicationController
   def create
     # @feed = Feed.new(feed_params)
     # @feed.user_id = @current_user.id
-    byebug
+    
     @feed = current_user.feeds.build(feed_params)
     @feed.save
     redirect_to images_path
