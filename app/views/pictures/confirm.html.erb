@@ -1,23 +1,13 @@
 <%= form_with(model: @picture, url: pictures_path, local: true) do |form| %>
- 
- 
- 
+
   <%= form.hidden_field :coment %>
   <%= form.hidden_field :image_cache %>
-
 
   <strong><h2>coment:</h2></strong>
   <%= @picture.coment %>
   <strong><h2>Image:</h2></strong>
   <%= image_tag @picture.image.url %>
 
-
-
-
   <%= form.submit "投稿する" %>
 <% end %>
-
 <%= link_to '戻る', images_path  %>
-
-
-

@@ -1,7 +1,6 @@
 class PicturesController < ApplicationController
   before_action :set_picture, only: %i[ show edit update destroy ]
 
-  
   def index
     @pictures = Picture.all
   end
@@ -10,13 +9,12 @@ class PicturesController < ApplicationController
   end
 
   def new
-    
     @picture = Picture.new
   end
-  
+
   def edit
   end
-  
+
   def create
     @picture = current_user.pictures.build(picture_params)
     @picture.save
@@ -41,7 +39,6 @@ class PicturesController < ApplicationController
 
   def destroy
     @picture.destroy
-
     respond_to do |format|
       format.html { redirect_to images_path, notice: "Picture was successfully destroyed." }
       format.json { head :no_content }
