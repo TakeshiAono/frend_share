@@ -1,12 +1,12 @@
-<%= form_with(scope: :users, url: users_path, local:true) do |form| %>
+<%= form_with(scope: :users, url: users_path, local:true, class:"form-signin") do |form| %>
   <%= form.label :name %>
-  <%= form.text_field :name %>
+  <%= form.text_field :name, class:"form-control" %>
 
   <%= form.label :email %>
-  <%= form.text_field :email %>
+  <%= form.text_field :email, class:"form-control" %>
 
   <%= form.label :password_digest %>
-  <%= form.text_field :password_digest %>
+  <%= form.text_field :password_digest, type:"password", class:"form-control" %>
 
-  <%= form.submit %>
+  <%= form.submit "登録", class:"btn btn-lg btn-primary btn-block" %>
 <% end %>
