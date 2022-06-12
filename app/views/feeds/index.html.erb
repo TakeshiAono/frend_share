@@ -11,12 +11,12 @@
   </thead>
 
   <tbody>
-    <% @feeds.each do |feed| %>
+    <% @pictures.each do |picture| %>
       <tr>
-        <td><%= feed.image %></td>
-        <td><%= link_to 'Show', feed %></td>
-        <td><%= link_to 'Edit', edit_feed_path(feed) %></td>
-        <td><%= link_to 'Destroy', feed, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= picture.image %></td>
+        <td><%= link_to 'Show', picture %></td>
+        <td><%= link_to 'Edit', edit_picture_path(picture) %></td>
+        <td><%= link_to 'Destroy', picture, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -24,4 +24,4 @@
 
 <br>
 
-<%= link_to 'New Feed', new_feed_path %>
+<%= link_to 'New Feed', new_picture_path %>

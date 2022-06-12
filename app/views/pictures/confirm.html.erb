@@ -1,4 +1,4 @@
-<%= form_with(model: @feed, url: feeds_path, local: true) do |form| %>
+<%= form_with(model: @picture, url: pictures_path, local: true) do |form| %>
  
  
  
@@ -7,9 +7,9 @@
 
 
   <strong><h2>coment:</h2></strong>
-  <%= @feed.coment %>
+  <%= @picture.coment %>
   <strong><h2>Image:</h2></strong>
-  <%= image_tag @feed.image.url %>
+  <%= image_tag @picture.image.url %>
 
 
 

@@ -1,1 +1,1 @@
-json.partial! "feeds/feed", feed: @feed
+json.partial! "pictures/picture", picture: @picture

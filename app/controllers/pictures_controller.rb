@@ -1,81 +1,81 @@
 class PicturesController < ApplicationController
-  before_action :set_feed, only: %i[ show edit update destroy ]
+  before_action :set_picture, only: %i[ show edit update destroy ]
 
-  # GET /feeds or /feeds.json
+  # GET /pictures or /pictures.json
   def index
-    @feeds = Feed.all
+    @pictures = Picture.all
   end
 
-  # GET /feeds/1 or /feeds/1.json
+  # GET /pictures/1 or /pictures/1.json
   def show
   end
 
-  # GET /feeds/new
+  # GET /pictures/new
   def new
     
-    @feed = Feed.new
-    # @feed = Feed.new(feed_params)
+    @picture = Picture.new
+    # @picture = Picture.new(picture_params)
   end
   
-  # GET /feeds/1/edit
+  # GET /pictures/1/edit
   def edit
   end
   
-  # POST /feeds or /feeds.json
+  # POST /pictures or /pictures.json
   def create
-    # @feed = Feed.new(feed_params)
-    # @feed.user_id = @current_user.id
+    # @picture = Picture.new(picture_params)
+    # @picture.user_id = @current_user.id
     
-    @feed = current_user.feeds.build(feed_params)
-    @feed.save
+    @picture = current_user.pictures.build(picture_params)
+    @picture.save
     redirect_to images_path
     
     
     # respond_to do |format|
-      # if @feed.save
-        # render confirm_feeds_path
-        # format.html { redirect_to feed_url(@feed), notice: "Feed was successfully created." }
-        # format.json { render :show, status: :created, location: @feed }
+      # if @picture.save
+        # render confirm_pictures_path
+        # format.html { redirect_to picture_url(@picture), notice: "Picture was successfully created." }
+        # format.json { render :show, status: :created, location: @picture }
       # else
         # format.html { render :new, status: :unprocessable_entity }
-        # format.json { render json: @feed.errors, status: :unprocessable_entity }
+        # format.json { render json: @picture.errors, status: :unprocessable_entity }
       # end
     # end
   end
 
   def confirm
-    @feed = Feed.new(feed_params)
+    @picture = Picture.new(picture_params)
   end
 
-  # PATCH/PUT /feeds/1 or /feeds/1.json
+  # PATCH/PUT /pictures/1 or /pictures/1.json
   def update
     respond_to do |format|
-      if @feed.update(feed_params)
-        format.html { redirect_to feed_url(@feed), notice: "Feed was successfully updated." }
-        format.json { render :show, status: :ok, location: @feed }
+      if @picture.update(picture_params)
+        format.html { redirect_to picture_url(@picture), notice: "Picture was successfully updated." }
+        format.json { render :show, status: :ok, location: @picture }
       else
         format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @feed.errors, status: :unprocessable_entity }
+        format.json { render json: @picture.errors, status: :unprocessable_entity }
       end
     end
   end
 
-  # DELETE /feeds/1 or /feeds/1.json
+  # DELETE /pictures/1 or /pictures/1.json
   def destroy
-    @feed.destroy
+    @picture.destroy
 
     respond_to do |format|
-      format.html { redirect_to images_path, notice: "Feed was successfully destroyed." }
+      format.html { redirect_to images_path, notice: "Picture was successfully destroyed." }
       format.json { head :no_content }
     end
   end
 
   private
-  def set_feed
-    @feed = Feed.find(params[:id])
+  def set_picture
+    @picture = Picture.find(params[:id])
   end
 
-  def feed_params
-    params.require(:feed).permit(:image, :image_cache, :coment)
+  def picture_params
+    params.require(:picture).permit(:image, :image_cache, :coment)
   end
 end

@@ -3,10 +3,10 @@
 <p>
   
   <strong><h2>coment:</h2></strong>
-  <%= @feed.coment%>
+  <%= @picture.coment%>
   <strong><h2>Image:</h2></strong>
-  <%= image_tag @feed.image.url %>
+  <%= image_tag @picture.image.url %>
 </p>
 
-<%= link_to 'Edit', edit_feed_path(@feed) %> |
+<%= link_to 'Edit', edit_picture_path(@picture) %> |
 <%= link_to 'Back', images_path %>

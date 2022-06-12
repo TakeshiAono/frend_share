@@ -1,12 +1,12 @@
 class ImagesController < ApplicationController
   # skip_before_action :login_required, only: [:index, :create]
   def index
-    @feeds = Feed.all
+    @pictures = Picture.all
   end
 
   # def new
-  #   @images = Feed.new
-  #   render new_feed_path
+  #   @images = Picture.new
+  #   render new_picture_path
   # end
   
   # def create

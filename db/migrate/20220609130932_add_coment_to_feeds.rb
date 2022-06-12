@@ -1,5 +1,5 @@
 class AddComentToFeeds < ActiveRecord::Migration[6.0]
   def change
-    add_column :feeds, :coment, :text
+    add_column :pictures, :coment, :text
   end
 end

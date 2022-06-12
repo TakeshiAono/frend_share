@@ -15,13 +15,13 @@ ActiveRecord::Schema.define(version: 2022_06_11_053643) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "feeds", force: :cascade do |t|
+  create_table "pictures", force: :cascade do |t|
     t.text "image"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.text "coment"
     t.bigint "user_id", null: false
-    t.index ["user_id"], name: "index_feeds_on_user_id"
+    t.index ["user_id"], name: "index_pictures_on_user_id"
   end
 
   create_table "images", force: :cascade do |t|
@@ -49,6 +49,6 @@ ActiveRecord::Schema.define(version: 2022_06_11_053643) do
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
-  add_foreign_key "feeds", "users"
+  add_foreign_key "pictures", "users"
   add_foreign_key "pictures", "users"
 end

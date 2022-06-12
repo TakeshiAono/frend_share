@@ -1,1 +1,1 @@
-json.array! @feeds, partial: "feeds/feed", as: :feed
+json.array! @pictures, partial: "pictures/picture", as: :picture

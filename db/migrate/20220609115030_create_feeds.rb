@@ -1,6 +1,6 @@
 class CreateFeeds < ActiveRecord::Migration[6.0]
   def change
-    create_table :feeds do |t|
+    create_table :pictures do |t|
       t.text :image
 
       t.timestamps

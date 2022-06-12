@@ -5,7 +5,7 @@ Rails.application.routes.draw do
       post 'confirm'
     end
   end
-  resources :feeds do
+  resources :pictures do
     collection do
       post 'confirm'
     end
