@@ -1,13 +1,16 @@
-<%= form_with(scope: :session, url: sessions_path, local:true) do |form| %>
+<%= form_with(scope: :session, url: sessions_path, local:true, class:"form-signin") do |form| %>
   <%= form.label :name %>
-  <%= form.text_field :name %>
+  <%= form.text_field :name, class:"form-control" %>
 
   <%= form.label :email %>
-  <%= form.text_field :email %>
+  <%= form.text_field :email, type:"email", class:"form-control" %>
 
   <%= form.label :password_digest %>
-  <%= form.text_field :password_digest %>
+  <%= form.text_field :password_digest, type:"password", class:"form-control" %>
 
-  <%= form.submit %>
+  <%= form.submit "ログイン", class:"btn btn-lg btn-primary btn-block" %>
+  
+  <div class="btn btn-light">
+    <%= link_to 'アカウント登録', new_user_path %> 
+  </div>
 <% end %>
-<%= link_to 'sing in', new_user_path %>
